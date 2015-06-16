@@ -1,0 +1,15 @@
+// Summation of Primes
+// Sum of all primes below 2 million
+function isPrime(n) {
+	if (n <= 3) { return n > 1; }
+    if (n % 2 === 0 || n % 3 === 0) { return false; }
+    for (var  i = 5; i * i <= n; i += 6) {
+        if (n % i === 0 || n % (i + 2) === 0) { return false; }
+    }
+    return true;
+}
+var sum = 0;
+for(var i = 1; i <= 2000000; i++) {
+	if(isPrime(i)) { sum += i; }
+}
+console.log(sum);
